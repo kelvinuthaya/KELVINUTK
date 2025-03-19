@@ -8,7 +8,7 @@ st.set_page_config(page_title="Mon Portfolio", page_icon="💻", layout="wide")
 # Liens GitHub (remplace avec ton repo)
 PROFILE_IMG = "https://raw.githubusercontent.com/kelvinuthaya/KELVINUTK/4561e0f75ea1b2fce8894a1f6969dc30d5866fe7/profile.jpg"
 CV_PREVIEW = "https://raw.githubusercontent.com/kelvinuthaya/KELVINUTK/refs/heads/main/Capture%20d’écran%202025-03-19%20à%2023.27.07.png"
-CV_URL = "https://github.com/kelvinuthaya/KELVINUTK/blob/85d47cd7c9452946d452c23221f844543c65dac7/CV.pdf"
+CV_URL = "https://drive.google.com/file/d/11YKFjRfxwF55Ka_WOeKTyMZ_txJoG6bx/preview"  # Lien modifié pour la prévisualisation
 
 # Affichage des images avec contrôle d'erreur
 st.title("Bienvenue sur mon Portfolio ! 👋")
