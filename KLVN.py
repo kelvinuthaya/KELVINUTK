@@ -49,31 +49,7 @@ elif page == "Mon CV":
     st.title("📄 Mon CV")
     st.write("Vous pouvez consulter mon CV ci-dessous ou le télécharger.")
 
-   import streamlit as st
-import requests
-from io import BytesIO
-
-# Liens GitHub (remplace par ton vrai profil et repo)
-GITHUB_REPO = "https://raw.githubusercontent.com/tonprofil/tonrepo/main/"
-PROFILE_IMG = GITHUB_REPO + "profile.jpg"
-CV_URL = GITHUB_REPO + "cv.pdf"
-
-st.title("Bienvenue sur mon Portfolio ! 👋")
-
-# 📌 Affichage de la photo de profil
-try:
-    st.image(PROFILE_IMG, width=250, caption="Photo de profil")
-except:
-    st.error("❌ Impossible de charger l'image. Vérifiez le lien GitHub.")
-
-# 📄 Page "Mon CV"
-page = st.sidebar.selectbox("Navigation", ["Accueil", "Mon CV"])
-
-if page == "Mon CV":
-    st.title("📄 Mon CV")
-    st.write("Vous pouvez consulter mon CV ci-dessous ou le télécharger.")
-
-    try:
+  try:
         # 🔹 Affichage direct du PDF avec un iframe
         pdf_viewer = f'<iframe src="{CV_URL}" width="700" height="800"></iframe>'
         st.markdown(pdf_viewer, unsafe_allow_html=True)
@@ -93,7 +69,6 @@ if page == "Mon CV":
 
     except:
         st.error("❌ Impossible de charger le CV. Vérifiez le lien GitHub.")
-
 
 # Page Projets
 elif page == "Projets":
@@ -139,3 +114,6 @@ elif page == "Contact":
         st.success("Message envoyé avec succès ! (Simulé)")
 
 # Lancer l'application avec : streamlit run app.py
+
+
+
