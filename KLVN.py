@@ -48,27 +48,26 @@ if page == "Accueil":
 elif page == "Mon CV":
     st.title("📄 Mon CV")
     st.write("Vous pouvez consulter mon CV ci-dessous ou le télécharger.")
-
-  try:
+    try:
         # 🔹 Affichage direct du PDF avec un iframe
         pdf_viewer = f'<iframe src="{CV_URL}" width="700" height="800"></iframe>'
         st.markdown(pdf_viewer, unsafe_allow_html=True)
-
+        
         # 🔹 Bouton de téléchargement
         response = requests.get(CV_URL)
         response.raise_for_status()
         pdf_bytes = BytesIO(response.content)
-
+        
         st.download_button(
-            label="📥 Télécharger mon CV",
-            data=pdf_bytes,
-            file_name="mon_cv.pdf",
-            mime="application/pdf",
-            key="download_cv"
+        label="📥 Télécharger mon CV",
+        data=pdf_bytes,
+        file_name="mon_cv.pdf",
+        mime="application/pdf",
+        key="download_cv"
         )
 
-    except:
-        st.error("❌ Impossible de charger le CV. Vérifiez le lien GitHub.")
+except:
+st.error("❌ Impossible de charger le CV. Vérifiez le lien GitHub.")
 
 # Page Projets
 elif page == "Projets":
