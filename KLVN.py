@@ -50,11 +50,23 @@ elif page == "Mon CV":
     st.write("Vous pouvez consulter mon CV ci-dessous ou le télécharger.")
 
     try:
+        # Téléchargement du fichier PDF depuis GitHub
         response = requests.get(CV_URL)
         response.raise_for_status()
         pdf_bytes = BytesIO(response.content)
-        st.download_button(label="📥 Télécharger mon CV", data=pdf_bytes, file_name="mon_cv.pdf", mime="application/pdf")
+
+        # Bouton de téléchargement avec une clé unique pour éviter les conflits
+        st.download_button(
+            label="📥 Télécharger mon CV",
+            data=pdf_bytes,
+            file_name="mon_cv.pdf",
+            mime="application/pdf",
+            key="download_cv"  # Clé unique pour éviter l'erreur
+        )
+
+        # Affichage d'un aperçu du CV (image)
         st.image(CV_PREVIEW, caption="Aperçu du CV")
+
     except requests.exceptions.RequestException:
         st.error("Impossible de charger le CV. Vérifiez le lien GitHub.")
 
