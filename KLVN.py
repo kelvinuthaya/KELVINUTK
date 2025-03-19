@@ -7,7 +7,7 @@ st.set_page_config(page_title="Mon Portfolio", page_icon="💻", layout="wide")
 
 # Liens GitHub (remplace avec ton repo)
 PROFILE_IMG = "https://github.com/kelvinuthaya/KELVINUTK/blob/4561e0f75ea1b2fce8894a1f6969dc30d5866fe7/profile.jpg"
-CV_PREVIEW = "https://raw.githubusercontent.com/tonprofil/tonrepo/main/images/cv_preview.png"
+CV_PREVIEW = "https://github.com/kelvinuthaya/KELVINUTK/blob/8c9bd54ee6c6d876d0c634c064f1101f7b142540/cv_preview.jpg"
 CV_URL = "https://github.com/kelvinuthaya/KELVINUTK/blob/4561e0f75ea1b2fce8894a1f6969dc30d5866fe7/CV.pdf"
 
 # Affichage des images avec contrôle d'erreur
@@ -37,7 +37,7 @@ page = st.sidebar.radio("Aller à :", pages)
 if page == "Accueil":
     st.title("Bienvenue sur mon Portfolio ! 👋")
     st.write("""
-    Bonjour ! Je suis [Ton Nom], étudiant(e) en informatique et actuellement à la recherche d'un **stage** ou d'une **alternance**.  
+    Bonjour ! Je suis Kelvin UTHAYAKUMAR, étudiant(e) en BUT Informatique à et actuellement à la recherche d'un **stage** d'une durée de 8 à 10 semaines.  
     Passionné(e) par le développement et les nouvelles technologies, voici mon portfolio où vous trouverez mon **CV**, mes **projets**, et mes **coordonnées**.
     """)
     
