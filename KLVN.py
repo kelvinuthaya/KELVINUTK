@@ -6,7 +6,7 @@ from io import BytesIO
 st.set_page_config(page_title="Mon Portfolio", page_icon="💻", layout="wide")
 
 # Liens GitHub pour les ressources
-GITHUB_REPO = "https://github.com/kelvinuthaya/KELVINUTK/tree/main"  # Remplace par ton repo
+GITHUB_REPO = "https://github.com/kelvinuthaya/KELVINUTK/main"  # Remplace par ton repo
 CV_URL = GITHUB_REPO + "/cv.pdf"  # Lien direct vers ton CV sur GitHub
 PROFILE_IMG = GITHUB_REPO + "/profile.jpg"  # Photo de profil
 CV_PREVIEW = GITHUB_REPO + "/cv_preview.png"  # Aperçu du CV
