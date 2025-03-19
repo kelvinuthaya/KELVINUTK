@@ -8,7 +8,13 @@ st.set_page_config(page_title="Mon Portfolio", page_icon="💻", layout="wide")
 # Liens GitHub (remplace avec ton repo)
 PROFILE_IMG = "https://raw.githubusercontent.com/kelvinuthaya/KELVINUTK/4561e0f75ea1b2fce8894a1f6969dc30d5866fe7/profile.jpg"
 CV_PREVIEW = "https://raw.githubusercontent.com/kelvinuthaya/KELVINUTK/refs/heads/main/Capture%20d’écran%202025-03-19%20à%2023.27.07.png"
-CV_URL = "https://drive.google.com/file/d/11YKFjRfxwF55Ka_WOeKTyMZ_txJoG6bx/preview"  # Lien de prévisualisation du PDF sur Google Drive
+
+# Remplace par l'ID de ton fichier Google Drive
+CV_FILE_ID = "11YKFjRfxwF55Ka_WOeKTyMZ_txJoG6bx"
+
+# Liens pour Google Drive (prévisualisation et téléchargement)
+CV_URL_PREVIEW = f"https://drive.google.com/file/d/{CV_FILE_ID}/preview"  # Prévisualisation pour iframe
+CV_URL_DOWNLOAD = f"https://drive.google.com/uc?export=download&id={CV_FILE_ID}"  # Lien direct pour télécharger le PDF
 
 # Affichage des images avec contrôle d'erreur
 st.title("Bienvenue sur mon Portfolio ! 👋")
@@ -45,15 +51,16 @@ st.markdown("<a name='section2'></a>", unsafe_allow_html=True)  # Ancre pour Mon
 # Page CV
 st.title("📄 Mon CV")
 st.write("Vous pouvez consulter mon CV ci-dessous ou le télécharger.")
+
+# Affichage du PDF avec un iframe (prévisualisation)
 try:
-    # 🔹 Affichage direct du PDF avec un iframe
-    pdf_viewer = f'<iframe src="{CV_URL}" width="700" height="800"></iframe>'
+    pdf_viewer = f'<iframe src="{CV_URL_PREVIEW}" width="700" height="800"></iframe>'
     st.markdown(pdf_viewer, unsafe_allow_html=True)
-    
-    # 🔹 Bouton de téléchargement avec lien direct
+
+    # Bouton de téléchargement
     st.download_button(
         label="📥 Télécharger mon CV",
-        data=requests.get(CV_URL).content,  # Télécharge le contenu du fichier PDF
+        data=requests.get(CV_URL_DOWNLOAD).content,  # Télécharger le fichier via le lien direct
         file_name="mon_cv.pdf",
         mime="application/pdf",
         key="download_cv"
