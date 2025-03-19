@@ -8,7 +8,7 @@ st.set_page_config(page_title="Mon Portfolio", page_icon="💻", layout="wide")
 # Liens GitHub (remplace avec ton repo)
 PROFILE_IMG = "https://raw.githubusercontent.com/kelvinuthaya/KELVINUTK/4561e0f75ea1b2fce8894a1f6969dc30d5866fe7/profile.jpg"
 CV_PREVIEW = "https://raw.githubusercontent.com/kelvinuthaya/KELVINUTK/refs/heads/main/Capture%20d’écran%202025-03-19%20à%2023.27.07.png"
-CV_URL = "https://drive.google.com/file/d/11YKFjRfxwF55Ka_WOeKTyMZ_txJoG6bx/preview"  # Lien modifié pour la prévisualisation
+CV_URL = "https://drive.google.com/uc?id=11YKFjRfxwF55Ka_WOeKTyMZ_txJoG6bx&export=download"  # Lien de téléchargement direct
 
 # Affichage des images avec contrôle d'erreur
 st.title("Bienvenue sur mon Portfolio ! 👋")
@@ -50,20 +50,16 @@ try:
     pdf_viewer = f'<iframe src="{CV_URL}" width="700" height="800"></iframe>'
     st.markdown(pdf_viewer, unsafe_allow_html=True)
     
-    # 🔹 Bouton de téléchargement
-    response = requests.get(CV_URL)
-    response.raise_for_status()
-    pdf_bytes = BytesIO(response.content)
-
+    # 🔹 Bouton de téléchargement avec lien direct
     st.download_button(
         label="📥 Télécharger mon CV",
-        data=pdf_bytes,
+        data=requests.get(CV_URL).content,  # Télécharge le contenu du fichier PDF
         file_name="mon_cv.pdf",
         mime="application/pdf",
         key="download_cv"
     )
-except:
-    st.error("❌ Impossible de charger le CV. Vérifiez le lien GitHub.")
+except Exception as e:
+    st.error(f"❌ Impossible de charger le CV. Erreur: {e}")
 
 st.markdown("<a name='section3'></a>", unsafe_allow_html=True)  # Ancre pour Projets
 # Page Projets
