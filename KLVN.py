@@ -66,8 +66,8 @@ elif page == "Mon CV":
         key="download_cv"
         )
 
-except:
-st.error("❌ Impossible de charger le CV. Vérifiez le lien GitHub.")
+    except:
+        st.error("❌ Impossible de charger le CV. Vérifiez le lien GitHub.")
 
 # Page Projets
 elif page == "Projets":
