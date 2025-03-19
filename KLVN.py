@@ -7,7 +7,7 @@ st.set_page_config(page_title="Mon Portfolio", page_icon="💻", layout="wide")
 
 # Liens GitHub (remplace avec ton repo)
 PROFILE_IMG = "https://raw.githubusercontent.com/kelvinuthaya/KELVINUTK/4561e0f75ea1b2fce8894a1f6969dc30d5866fe7/profile.jpg"
-CV_PREVIEW = "https://raw.githubusercontent.com/kelvinuthaya/KELVINUTK/4561e0f75ea1b2fce8894a1f6969dc30d5866fe7/profile.jpgg"
+CV_PREVIEW = "https://raw.githubusercontent.com/kelvinuthaya/KELVINUTK/refs/heads/main/PHOTO%20ID%202019%20KLVN.JPG"
 CV_URL = "https://viewscreen.githubusercontent.com/view/pdf?browser=safari&bypass_fastly=true&color_mode=auto&commit=8cd40c49a5b034593d93c9a9c45c2066dfb7fff2&device=unknown_device&docs_host=https%3A%2F%2Fdocs.github.com&enc_url=68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f6b656c76696e7574686179612f4b454c56494e55544b2f386364343063343961356230333435393364393363396139633435633230363664666237666666322f43562e706466&logged_in=true&nwo=kelvinuthaya%2FKELVINUTK&path=CV.pdf&platform=mac&repository_id=951551880&repository_type=Repository&version=18#fe60f285-e9c9-435f-a4b8-0ac392a50de9"
 
 # Affichage des images avec contrôle d'erreur
