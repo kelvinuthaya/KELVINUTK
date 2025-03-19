@@ -13,91 +13,99 @@ CV_URL = "https://github.com/kelvinuthaya/KELVINUTK/blob/85d47cd7c9452946d452c23
 # Affichage des images avec contrôle d'erreur
 st.title("Bienvenue sur mon Portfolio ! 👋")
 
-# Sidebar pour la navigation
-st.sidebar.title("Navigation")
-pages = ["Accueil", "Mon CV", "Projets", "Contact"]
-page = st.sidebar.radio("Aller à :", pages)
+# Style pour le défilement fluide
+st.markdown("""
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+""", unsafe_allow_html=True)
 
-# Accueil
-if page == "Accueil":
-    st.title("Bienvenue sur mon Portfolio ! 👋")
-    st.write("""
-    Bonjour ! Je suis Kelvin UTHAYAKUMAR, étudiant(e) en BUT Informatique à et actuellement à la recherche d'un **stage** d'une durée de 8 à 10 semaines.  
-    Passionné(e) par le développement et les nouvelles technologies, voici mon portfolio où vous trouverez mon **CV**, mes **projets**, et mes **coordonnées**.
-    """)
-    
-    st.image(PROFILE_IMG, width=250)
-    st.subheader("🚀 Explorez mon portfolio via le menu à gauche !")
+# Création des ancres pour chaque section
+st.markdown("<a name='section1'></a>", unsafe_allow_html=True)  # Ancre pour Accueil
+# Section Accueil
+st.title("Bienvenue sur mon Portfolio ! 👋")
+st.write("""
+Bonjour ! Je suis Kelvin UTHAYAKUMAR, étudiant(e) en BUT Informatique et actuellement à la recherche d'un **stage** d'une durée de 8 à 10 semaines.  
+Passionné(e) par le développement et les nouvelles technologies, voici mon portfolio où vous trouverez mon **CV**, mes **projets**, et mes **coordonnées**.
+""")
 
+st.image(PROFILE_IMG, width=250)
+st.subheader("🚀 Explorez mon portfolio en faisant défiler la page !")
+
+# Lien de navigation vers "Mon CV"
+st.markdown("""
+    <a href="#section2" style="font-size:20px; color: blue;">Voir mon CV 📄</a><br>
+    <a href="#section3" style="font-size:20px; color: blue;">Voir mes projets 💻</a><br>
+    <a href="#section4" style="font-size:20px; color: blue;">Me contacter 📬</a>
+""", unsafe_allow_html=True)
+
+st.markdown("<a name='section2'></a>", unsafe_allow_html=True)  # Ancre pour Mon CV
 # Page CV
-elif page == "Mon CV":
-    st.title("📄 Mon CV")
-    st.write("Vous pouvez consulter mon CV ci-dessous ou le télécharger.")
-    try:
-        # 🔹 Affichage direct du PDF avec un iframe
-        pdf_viewer = f'<iframe src="{CV_URL}" width="700" height="800"></iframe>'
-        st.markdown(pdf_viewer, unsafe_allow_html=True)
-        
-        # 🔹 Bouton de téléchargement
-        response = requests.get(CV_URL)
-        response.raise_for_status()
-        pdf_bytes = BytesIO(response.content)
-        
-        st.download_button(
+st.title("📄 Mon CV")
+st.write("Vous pouvez consulter mon CV ci-dessous ou le télécharger.")
+try:
+    # 🔹 Affichage direct du PDF avec un iframe
+    pdf_viewer = f'<iframe src="{CV_URL}" width="700" height="800"></iframe>'
+    st.markdown(pdf_viewer, unsafe_allow_html=True)
+    
+    # 🔹 Bouton de téléchargement
+    response = requests.get(CV_URL)
+    response.raise_for_status()
+    pdf_bytes = BytesIO(response.content)
+
+    st.download_button(
         label="📥 Télécharger mon CV",
         data=pdf_bytes,
         file_name="mon_cv.pdf",
         mime="application/pdf",
         key="download_cv"
-        )
+    )
+except:
+    st.error("❌ Impossible de charger le CV. Vérifiez le lien GitHub.")
 
-    except:
-        st.error("❌ Impossible de charger le CV. Vérifiez le lien GitHub.")
-
+st.markdown("<a name='section3'></a>", unsafe_allow_html=True)  # Ancre pour Projets
 # Page Projets
-elif page == "Projets":
-    st.title("📂 Mes Projets")
+st.title("📂 Mes Projets")
 
-    # Exemple de projets (remplace par les tiens)
-    projets = [
-        {"nom": "Site E-commerce", "desc": "Développement d'une boutique en ligne avec Django.", "lien": "https://github.com/tonprofil/projet1"},
-        {"nom": "Application Mobile", "desc": "Application Android pour la gestion de tâches.", "lien": "https://github.com/tonprofil/projet2"},
-        {"nom": "Chatbot IA", "desc": "Chatbot basé sur l'IA avec Python et GPT.", "lien": "https://github.com/tonprofil/projet3"},
-    ]
+# Exemple de projets (remplace par les tiens)
+projets = [
+    {"nom": "Site E-commerce", "desc": "Développement d'une boutique en ligne avec Django.", "lien": "https://github.com/tonprofil/projet1"},
+    {"nom": "Application Mobile", "desc": "Application Android pour la gestion de tâches.", "lien": "https://github.com/tonprofil/projet2"},
+    {"nom": "Chatbot IA", "desc": "Chatbot basé sur l'IA avec Python et GPT.", "lien": "https://github.com/tonprofil/projet3"},
+]
 
-    for projet in projets:
-        st.subheader(projet["nom"])
-        st.write(projet["desc"])
-        st.markdown(f"[🔗 Voir le projet]({projet['lien']})")
+for projet in projets:
+    st.subheader(projet["nom"])
+    st.write(projet["desc"])
+    st.markdown(f"[🔗 Voir le projet]({projet['lien']})")
 
+st.markdown("<a name='section4'></a>", unsafe_allow_html=True)  # Ancre pour Contact
 # Page Contact
-elif page == "Contact":
-    st.title("📬 Me Contacter")
+st.title("📬 Me Contacter")
 
-    st.write("N'hésitez pas à me contacter pour toute opportunité de stage ou alternance.")
+st.write("N'hésitez pas à me contacter pour toute opportunité de stage ou alternance.")
 
-    col1, col2 = st.columns(2)
+col1, col2 = st.columns(2)
 
-    with col1:
-        st.subheader("📧 Email")
-        st.write("[ton.email@example.com](mailto:ton.email@example.com)")
+with col1:
+    st.subheader("📧 Email")
+    st.write("[ton.email@example.com](mailto:ton.email@example.com)")
 
-        st.subheader("💼 LinkedIn")
-        st.write("[Mon Profil LinkedIn](https://www.linkedin.com/in/tonprofil)")
+    st.subheader("💼 LinkedIn")
+    st.write("[Mon Profil LinkedIn](https://www.linkedin.com/in/tonprofil)")
 
-    with col2:
-        st.subheader("🐍 GitHub")
-        st.write("[Mon GitHub](https://github.com/tonprofil)")
+with col2:
+    st.subheader("🐍 GitHub")
+    st.write("[Mon GitHub](https://github.com/tonprofil)")
 
-        st.subheader("🌍 Portefeuille Web")
-        st.write("[Mon Portfolio](https://tonportfolio.com)")
+    st.subheader("🌍 Portefeuille Web")
+    st.write("[Mon Portfolio](https://tonportfolio.com)")
 
-    st.text_input("Votre nom")
-    st.text_area("Votre message")
-    if st.button("Envoyer"):
-        st.success("Message envoyé avec succès ! (Simulé)")
+st.text_input("Votre nom")
+st.text_area("Votre message")
+if st.button("Envoyer"):
+    st.success("Message envoyé avec succès ! (Simulé)")
 
 # Lancer l'application avec : streamlit run app.py
-
-
-
