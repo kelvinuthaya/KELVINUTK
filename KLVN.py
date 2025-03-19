@@ -7,26 +7,11 @@ st.set_page_config(page_title="Mon Portfolio", page_icon="💻", layout="wide")
 
 # Liens GitHub (remplace avec ton repo)
 PROFILE_IMG = "https://raw.githubusercontent.com/kelvinuthaya/KELVINUTK/4561e0f75ea1b2fce8894a1f6969dc30d5866fe7/profile.jpg"
-CV_PREVIEW = "https://github.com/kelvinuthaya/KELVINUTK/blob/85d47cd7c9452946d452c23221f844543c65dac7/CV.pdf"
+CV_PREVIEW = "https://raw.githubusercontent.com/kelvinuthaya/KELVINUTK/refs/heads/main/Capture%20d’écran%202025-03-19%20à%2023.27.07.png"
 CV_URL = "https://github.com/kelvinuthaya/KELVINUTK/blob/85d47cd7c9452946d452c23221f844543c65dac7/CV.pdf"
 
 # Affichage des images avec contrôle d'erreur
 st.title("Bienvenue sur mon Portfolio ! 👋")
-
-try:
-    st.image(PROFILE_IMG, width=250, caption="Photo de profil")
-except:
-    st.error("Impossible de charger l'image de profil.")
-
-try:
-    response = requests.get(CV_URL)
-    response.raise_for_status()
-    pdf_bytes = BytesIO(response.content)
-    st.download_button(label="📥 Télécharger mon CV", data=pdf_bytes, file_name="mon_cv.pdf", mime="application/pdf")
-    st.image(CV_PREVIEW, caption="Aperçu du CV")
-except:
-    st.error("Impossible de charger le CV.")
-
 
 # Sidebar pour la navigation
 st.sidebar.title("Navigation")
