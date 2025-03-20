@@ -20,12 +20,24 @@ FICHIER_MESSAGES = "messages.csv"
 # ✅ Ajout de styles CSS
 st.markdown("""
     <style>
-        body { font-family: 'Arial', sans-serif; background-color: #f4f4f9; color: #333; }
+        body { font-family: 'Arial', sans-serif; background-color: #f4f4f9; color: #333; margin: 0; padding: 0; }
         h1, h2, h3 { color: #4CAF50; }
         a { color: #007BFF; font-weight: bold; text-decoration: none; }
         a:hover { color: #0056b3; }
-        
-        /* Boutons Streamlit */
+
+        /* Photo de profil : petite et dans le coin supérieur droit */
+        .profile-img {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            border-radius: 50%;
+            border: 3px solid #4CAF50;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            width: 50px;
+            height: 50px;
+        }
+
+        /* Boutons Streamlit : personnalisation du bouton "Télécharger mon CV" */
         .stButton > button {
             background-color: #6200ea;
             color: white;
@@ -38,24 +50,35 @@ st.markdown("""
         .stButton > button:hover {
             background-color: #3700b3;
         }
-        
-        /* Ciblage de la zone d'images */
-        img {
-            border-radius: 50%;
-            border: 5px solid #4CAF50;
-            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-        }
 
-        /* Section de texte */
+        /* Section de texte : occuper toute la largeur disponible */
         .section-text {
             font-size: 18px;
             line-height: 1.8;
             margin-top: 20px;
+            text-align: justify;
         }
 
         /* Container central */
         .container {
-            text-align: center;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 20px;
+        }
+
+        /* Styles généraux pour le contenu textuel */
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            width: 100%;
+        }
+
+        .content > h1, .content > h2, .content > h3 {
+            text-align: left;
+            width: 100%;
         }
     </style>
 """, unsafe_allow_html=True)
@@ -66,8 +89,10 @@ st.write("""
 Bonjour ! Je suis **Kelvin UTHAYAKUMAR**, étudiant en **BUT Informatique** et en recherche d'un **stage (8 à 10 semaines)**.  
 Découvrez ici mon **CV**, mes **projets** et mes **coordonnées**.
 """)
-st.image(PROFILE_IMG, width=250)
 st.markdown("<h3 class='section-text'>🚀 Explorez mon portfolio en faisant défiler la page !</h3>", unsafe_allow_html=True)
+
+# Affichage de la photo de profil dans le coin supérieur droit
+st.markdown(f'<img src="{PROFILE_IMG}" class="profile-img" />', unsafe_allow_html=True)
 
 # 🔹 Navigation rapide
 st.markdown("""
@@ -86,8 +111,8 @@ st.write("Vous pouvez consulter mon CV ci-dessous ou le télécharger.")
 # 🔹 Affichage du CV en iframe
 st.markdown(f'<iframe src="{CV_VIEWER_URL}" width="700" height="800"></iframe>', unsafe_allow_html=True)
 
-# 🔹 Bouton de téléchargement du CV
-st.markdown(f"[📥 Télécharger mon CV]({CV_DOWNLOAD_URL})", unsafe_allow_html=True)
+# 🔹 Bouton de téléchargement du CV (stylisé comme le bouton "Envoyer")
+st.markdown(f"<div class='stButton'>{st.button('📥 Télécharger mon CV')}</div>", unsafe_allow_html=True)
 
 # 📂 **Projets**
 st.markdown("<a name='section3'></a>", unsafe_allow_html=True)
