@@ -10,7 +10,7 @@ GITHUB_URL = "https://github.com/kelvinuthaya"
 CV_VIEWER_URL = "https://drive.google.com/file/d/11YKFjRfxwF55Ka_WOeKTyMZ_txJoG6bx/preview"
 CV_DOWNLOAD_URL = "https://drive.google.com/uc?export=download&id=11YKFjRfxwF55Ka_WOeKTyMZ_txJoG6bx"
 PROJECT_AADMSI_URL = "https://aadmsi.streamlit.app"
-PROJECT_AADMSI_IMG = "https://via.placeholder.com/800x400?text=Capture+du+projet+AADMSI"
+PROJECT_AADMSI_IMG = "https://raw.githubusercontent.com/kelvinuthaya/KELVINUTK/refs/heads/main/Capture%20d’écran%202025-03-20%20à%2011.32.41.png"
 
 # ✅ Ajout de styles CSS
 st.markdown("""
