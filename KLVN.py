@@ -174,7 +174,7 @@ st.markdown("[Voir le projet AADMSI ici](https://aadmsi.streamlit.app)", unsafe_
 
 # 📸 **Capture d'écran du projet**
 st.write("Voici une capture d'écran de l'application :")
-st.image("https://via.placeholder.com/800x400?text=Capture+d'%C3%A9cran+du+projet+AADMSI", caption="Capture d'écran du projet AADMSI", use_column_width=True)
+st.image("https://github.com/kelvinuthaya/KELVINUTK/blob/main/Capture%20d%E2%80%99e%CC%81cran%202025-03-20%20a%CC%80%2011.32.41.png?raw=true", caption="Capture d'écran du projet AADMSI", use_column_width=True)
 
 # 🛠️ **Compétences et Technologies**
 st.markdown("<a name='section5'></a>", unsafe_allow_html=True)
