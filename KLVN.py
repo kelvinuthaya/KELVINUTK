@@ -1,140 +1,70 @@
 import streamlit as st
 import requests
+import pandas as pd
+import os
 from io import BytesIO
 
 # Configuration de la page
 st.set_page_config(page_title="Mon Portfolio", page_icon="💻", layout="wide")
 
-# Liens GitHub (remplace avec ton repo)
+# Liens pour les fichiers
 PROFILE_IMG = "https://raw.githubusercontent.com/kelvinuthaya/KELVINUTK/4561e0f75ea1b2fce8894a1f6969dc30d5866fe7/profile.jpg"
-CV_PREVIEW = "https://raw.githubusercontent.com/kelvinuthaya/KELVINUTK/refs/heads/main/Capture%20d’écran%202025-03-19%20à%2023.27.07.png"
-CV_URL = "https://drive.google.com/file/d/11YKFjRfxwF55Ka_WOeKTyMZ_txJoG6bx/view?usp=share_link"
 
-# Style pour personnalisation de la police et des couleurs
+# 🔹 Liens distincts pour le CV
+CV_VIEWER_URL = "https://drive.google.com/file/d/11YKFjRfxwF55Ka_WOeKTyMZ_txJoG6bx/preview"
+CV_DOWNLOAD_URL = "https://drive.google.com/uc?export=download&id=11YKFjRfxwF55Ka_WOeKTyMZ_txJoG6bx"
+
+# 🔹 Fichier CSV pour stocker les messages
+FICHIER_MESSAGES = "messages.csv"
+
+# ✅ Ajout de styles CSS
 st.markdown("""
     <style>
-        /* Changer la couleur du fond */
-        body {
-            background-color: #f4f4f9;
-        }
-
-        /* Modifier la couleur de texte par défaut */
-        .main {
-            color: #333;
-        }
-
-        /* Modifier la police du titre principal */
-        h1, h2 {
-            font-family: 'Arial', sans-serif;
-            color: #2d3e50;
-        }
-
-        /* Personnalisation des boutons */
-        .css-1v3fvcr {
-            background-color: #4CAF50;
-            color: white;
-            border-radius: 8px;
-            padding: 10px;
-        }
-
-        /* Personnalisation des liens */
-        a {
-            color: #3498db;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        /* Style des sections */
-        .stTitle {
-            font-family: 'Helvetica', sans-serif;
-            font-weight: bold;
-        }
-
-        .stText {
-            font-family: 'Arial', sans-serif;
-            font-size: 16px;
-        }
-
-        /* Ajouter des marges et padding */
-        .stMarkdown {
-            margin-top: 20px;
-            padding: 20px;
-            background-color: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .stButton {
-            margin: 15px 0;
-        }
-
+        body { font-family: 'Arial', sans-serif; background-color: #f4f4f9; color: #333; }
+        h1, h2, h3 { color: #4CAF50; }
+        a { color: #007BFF; font-weight: bold; text-decoration: none; }
+        a:hover { color: #0056b3; }
+        .stButton>button { background-color: #6200ea; color: white; border-radius: 12px; padding: 12px 24px; font-size: 16px; border: none; }
+        .stButton>button:hover { background-color: #3700b3; }
+        img { border-radius: 50%; border: 5px solid #4CAF50; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); }
+        .section-text { font-size: 18px; line-height: 1.8; margin-top: 20px; }
+        .container { text-align: center; }
     </style>
 """, unsafe_allow_html=True)
 
-# Affichage des images avec contrôle d'erreur
-st.title("Bienvenue sur mon Portfolio ! 👋")
-
-# Style pour le défilement fluide
-st.markdown("""
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-    </style>
-""", unsafe_allow_html=True)
-
-# Création des ancres pour chaque section
-st.markdown("<a name='section1'></a>", unsafe_allow_html=True)  # Ancre pour Accueil
-# Section Accueil
+# 🏠 **Accueil**
 st.title("Bienvenue sur mon Portfolio ! 👋")
 st.write("""
-Bonjour ! Je suis Kelvin UTHAYAKUMAR, étudiant(e) en BUT Informatique et actuellement à la recherche d'un **stage** d'une durée de 8 à 10 semaines.  
-Passionné(e) par le développement et les nouvelles technologies, voici mon portfolio où vous trouverez mon **CV**, mes **projets**, et mes **coordonnées**.
+Bonjour ! Je suis **Kelvin UTHAYAKUMAR**, étudiant en **BUT Informatique** et en recherche d'un **stage (8 à 10 semaines)**.  
+Découvrez ici mon **CV**, mes **projets** et mes **coordonnées**.
 """)
-
 st.image(PROFILE_IMG, width=250)
-st.subheader("🚀 Explorez mon portfolio en faisant défiler la page !")
+st.markdown("<h3 class='section-text'>🚀 Explorez mon portfolio en faisant défiler la page !</h3>", unsafe_allow_html=True)
 
-# Lien de navigation vers "Mon CV"
+# 🔹 Navigation rapide
 st.markdown("""
-    <a href="#section2" style="font-size:20px; color: blue;">Voir mon CV 📄</a><br>
-    <a href="#section3" style="font-size:20px; color: blue;">Voir mes projets 💻</a><br>
-    <a href="#section4" style="font-size:20px; color: blue;">Me contacter 📬</a>
+    <div class='container'>
+        <a href="#section2">📄 Voir mon CV</a><br>
+        <a href="#section3">💻 Voir mes projets</a><br>
+        <a href="#section4">📬 Me contacter</a>
+    </div>
 """, unsafe_allow_html=True)
 
-# Page CV
-st.markdown("<a name='section2'></a>", unsafe_allow_html=True)  # Ancre pour Mon CV
+# 📄 **Mon CV**
+st.markdown("<a name='section2'></a>", unsafe_allow_html=True)
 st.title("📄 Mon CV")
 st.write("Vous pouvez consulter mon CV ci-dessous ou le télécharger.")
 
-try:
-    # 🔹 Affichage direct du PDF avec un iframe
-    pdf_viewer = f'<iframe src="{CV_URL}" width="700" height="800"></iframe>'
-    st.markdown(pdf_viewer, unsafe_allow_html=True)
+# 🔹 Affichage du CV en iframe
+st.markdown(f'<iframe src="{CV_VIEWER_URL}" width="700" height="800"></iframe>', unsafe_allow_html=True)
 
-    # 🔹 Bouton de téléchargement
-    response = requests.get(CV_URL)
-    response.raise_for_status()
-    pdf_bytes = BytesIO(response.content)
+# 🔹 Bouton de téléchargement du CV
+st.markdown(f"[📥 Télécharger mon CV]({CV_DOWNLOAD_URL})", unsafe_allow_html=True)
 
-    st.download_button(
-        label="📥 Télécharger mon CV",
-        data=pdf_bytes,
-        file_name="mon_cv.pdf",
-        mime="application/pdf",
-        key="download_cv"
-    )
-except:
-    st.error("❌ Impossible de charger le CV. Vérifiez le lien GitHub.")
-
-# Page Projets
-st.markdown("<a name='section3'></a>", unsafe_allow_html=True)  # Ancre pour Projets
+# 📂 **Projets**
+st.markdown("<a name='section3'></a>", unsafe_allow_html=True)
 st.title("📂 Mes Projets")
 
-# Exemple de projets (remplace par les tiens)
 projets = [
     {"nom": "Site E-commerce", "desc": "Développement d'une boutique en ligne avec Django.", "lien": "https://github.com/tonprofil/projet1"},
     {"nom": "Application Mobile", "desc": "Application Android pour la gestion de tâches.", "lien": "https://github.com/tonprofil/projet2"},
@@ -146,8 +76,8 @@ for projet in projets:
     st.write(projet["desc"])
     st.markdown(f"[🔗 Voir le projet]({projet['lien']})")
 
-# Page Contact
-st.markdown("<a name='section4'></a>", unsafe_allow_html=True)  # Ancre pour Contact
+# 📬 **Me Contacter**
+st.markdown("<a name='section4'></a>", unsafe_allow_html=True)
 st.title("📬 Me Contacter")
 
 st.write("N'hésitez pas à me contacter pour toute opportunité de stage ou alternance.")
@@ -165,12 +95,39 @@ with col2:
     st.subheader("🐍 GitHub")
     st.write("[Mon GitHub](https://github.com/tonprofil)")
 
-    st.subheader("🌍 Portefeuille Web")
+    st.subheader("🌍 Portfolio Web")
     st.write("[Mon Portfolio](https://tonportfolio.com)")
 
-st.text_input("Votre nom")
-st.text_area("Votre message")
-if st.button("Envoyer"):
-    st.success("Message envoyé avec succès ! (Simulé)")
+# 📩 **Formulaire de contact (enregistrement CSV)**
+st.subheader("📨 Envoyer un message")
 
-# Lancer l'application avec : streamlit run app.py
+nom = st.text_input("Votre nom")
+message = st.text_area("Votre message")
+
+if st.button("Envoyer"):
+    if nom and message:
+        # Vérifier si le fichier existe, sinon créer une structure vide
+        if os.path.exists(FICHIER_MESSAGES):
+            df = pd.read_csv(FICHIER_MESSAGES)
+        else:
+            df = pd.DataFrame(columns=["Nom", "Message"])
+        
+        # Ajouter le message au fichier CSV
+        nouveau_message = pd.DataFrame([[nom, message]], columns=["Nom", "Message"])
+        df = pd.concat([df, nouveau_message], ignore_index=True)
+        df.to_csv(FICHIER_MESSAGES, index=False)
+
+        st.success("✅ Message envoyé et enregistré avec succès !")
+    else:
+        st.warning("⚠️ Veuillez remplir tous les champs.")
+
+# 🔹 Voir les messages reçus (Admin uniquement)
+if st.checkbox("📩 Voir les messages reçus (Admin)"):
+    if os.path.exists(FICHIER_MESSAGES):
+        df = pd.read_csv(FICHIER_MESSAGES)
+        if not df.empty:
+            st.write(df)
+        else:
+            st.info("Aucun message reçu pour le moment.")
+    else:
+        st.info("Aucun message reçu pour le moment.")
