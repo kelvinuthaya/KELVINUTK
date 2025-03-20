@@ -11,6 +11,7 @@ GITHUB_URL = "https://github.com/tonprofil"
 LINKEDIN_ICON = "https://upload.wikimedia.org/wikipedia/commons/0/01/LinkedIn_Logo_2023.png"  # URL pour l'icône LinkedIn
 GITHUB_ICON = "https://upload.wikimedia.org/wikipedia/commons/a/a9/GitHub_Logo_2023.png"  # URL pour l'icône GitHub
 
+
 # 🔹 Liens distincts pour le CV
 CV_VIEWER_URL = "https://drive.google.com/file/d/11YKFjRfxwF55Ka_WOeKTyMZ_txJoG6bx/preview"
 CV_DOWNLOAD_URL = "https://drive.google.com/uc?export=download&id=11YKFjRfxwF55Ka_WOeKTyMZ_txJoG6bx"
