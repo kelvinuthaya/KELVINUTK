@@ -46,4 +46,12 @@ st.markdown("""
         }
         
         .stButton > button:hover {
-            
+            background-color: #3700b3;
+        }
+
+        /* Section de texte : occuper toute la largeur disponible */
+        .section-text {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-top: 20px;
+            text-align: justify
