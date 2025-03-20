@@ -20,7 +20,7 @@ FICHIER_MESSAGES = "messages.csv"
 # ✅ Ajout de styles CSS
 st.markdown("""
     <style>
-        body { font-family: 'Arial', sans-serif; background-color: #f4f4f9; color: #333; margin: 0; padding: 0; }
+        body { font-family: 'Helvetica', sans-serif; background-color: #f4f4f9; color: #333; margin: 0; padding: 0; }
         h1, h2, h3 { color: #4CAF50; }
         a { color: #007BFF; font-weight: bold; text-decoration: none; }
         a:hover { color: #0056b3; }
@@ -28,8 +28,8 @@ st.markdown("""
         /* Photo de profil : petite et dans le coin supérieur droit */
         .profile-img {
             position: fixed;
-            top: 10px;
-            right: 10px;
+            top: 50px;
+            right: 50px;
             border-radius: 50%;
             border: 3px solid #4CAF50;
             box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
