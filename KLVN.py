@@ -111,8 +111,9 @@ st.write("Vous pouvez consulter mon CV ci-dessous ou le télécharger.")
 # 🔹 Affichage du CV en iframe
 st.markdown(f'<iframe src="{CV_VIEWER_URL}" width="700" height="800"></iframe>', unsafe_allow_html=True)
 
-# 🔹 Bouton de téléchargement du CV (stylisé comme le bouton "Envoyer")
-st.markdown(f"<div class='stButton'>{st.button('📥 Télécharger mon CV')}</div>", unsafe_allow_html=True)
+# 📥 **Bouton de téléchargement du CV** (correctement stylisé)
+if st.button('📥 Télécharger mon CV'):
+    st.markdown(f"[Télécharger le CV ici]({CV_DOWNLOAD_URL})", unsafe_allow_html=True)
 
 # 📂 **Projets**
 st.markdown("<a name='section3'></a>", unsafe_allow_html=True)
