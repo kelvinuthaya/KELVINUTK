@@ -93,8 +93,7 @@ st.markdown("""
     <div class='container'>
         <a href="#section2">📄 Voir mon CV</a><br>
         <a href="#section3">💻 Voir mes projets</a><br>
-        <a href="#section5">💼 Compétences & Technologies</a><br>
-        <a href="#section6">📚 Formation</a><br>
+        <a href="#section4">📬 Me contacter</a>
     </div>
 """, unsafe_allow_html=True)
 
@@ -118,53 +117,31 @@ st.title("📂 Mes Projets")
 st.subheader("🌐 Projet AADMSI - Analyse et Visualisation de Données")
 st.write("""
 Mon projet **AADMSI** est une application interactive développée avec **Streamlit**. Elle permet de gérer et visualiser des données d'entreprise via une interface simple et intuitive. Vous pouvez télécharger des fichiers de données et les analyser graphiquement.
-
-Voici le lien vers mon projet AADMSI intégré dans cette page :
 """)
+
+# Affichage du projet AADMSI en iframe
 st.markdown("""
-    <iframe src="https://share.streamlit.io/streamlit/demo/hello" width="100%" height="600" frameborder="0" allowfullscreen></iframe>
+    <iframe src="https://aadmsi.streamlit.app" width="100%" height="800" frameborder="0" allowfullscreen></iframe>
 """, unsafe_allow_html=True)
 
-st.markdown("[🔗 Voir le projet AADMSI en direct](https://aadmsi.streamlit.app)", unsafe_allow_html=True)
+# 📬 **Me Contacter**
+st.markdown("<a name='section4'></a>", unsafe_allow_html=True)
+st.title("📬 Me Contacter")
 
-# 📬 **Compétences & Technologies**
-st.markdown("<a name='section5'></a>", unsafe_allow_html=True)
-st.title("💼 Compétences & Technologies")
+st.write("N'hésitez pas à me contacter pour toute opportunité de stage ou alternance.")
 
-# Compétences techniques
-st.subheader("💻 Compétences Techniques")
-st.write("""
-- **Langages de programmation** : Python, Java, JavaScript, SQL
-- **Frameworks et outils** : Django, Flask, Streamlit, React, Node.js
-- **Bases de données** : MySQL, PostgreSQL, MongoDB
-- **Outils de développement** : Git, Docker, Jenkins
-- **Analyse de données** : Pandas, NumPy, Matplotlib, Plotly
-- **Développement mobile** : Kotlin, Android Studio
-""")
+col1, col2 = st.columns(2)
 
-# Compétences soft skills
-st.subheader("🧠 Compétences Soft Skills")
-st.write("""
-- **Communication** : Excellentes compétences en communication orale et écrite.
-- **Travail en équipe** : Capacité à travailler en collaboration avec des équipes interdisciplinaires.
-- **Gestion du temps** : Solides compétences en gestion de projets et respect des délais.
-- **Créativité** : Recherche constante de solutions novatrices et efficaces.
-""")
+with col1:
+    st.subheader("📧 Email")
+    st.write("[ton.email@example.com](mailto:ton.email@example.com)")
 
-# 📚 **Formation**
-st.markdown("<a name='section6'></a>", unsafe_allow_html=True)
-st.title("📚 Formation")
+    st.subheader("💼 LinkedIn")
+    st.write("[Mon Profil LinkedIn](https://www.linkedin.com/in/tonprofil)")
 
-# Détails sur la formation scolaire
-st.subheader("🎓 Parcours Scolaire")
-st.write("""
-Je suis actuellement étudiant en **BUT Informatique** à l'Université de [Nom de l'université]. Mon parcours académique m'a permis d'acquérir des compétences solides dans les domaines de la programmation, des bases de données, du développement web et mobile.
+with col2:
+    st.subheader("🐍 GitHub")
+    st.write("[Mon GitHub](https://github.com/tonprofil)")
 
-- **2021 - Présent** : BUT Informatique, Université de [Nom de l'université]
-  - Cours : Développement web, gestion de bases de données, intelligence artificielle, programmation orientée objet.
-  - Projets : Développement d'applications web, gestion de bases de données, création d'interfaces utilisateur.
-
-- **2019 - 2021** : Baccalauréat Scientifique (Spécialité Mathématiques)
-  - Cours : Mathématiques, physique, informatique.
-  - Projets : Analyse de données scientifiques, création de scripts Python pour résoudre des problèmes mathématiques.
-""")
+    st.subheader("🌍 Portfolio Web")
+    st.write("[Mon Portfolio](https://tonportfolio.com)")
