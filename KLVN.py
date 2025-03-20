@@ -169,3 +169,4 @@ st.text_input("Votre nom")
 st.text_area("Votre message")
 if st.button("Envoyer"):
     st.success("Message envoyé avec succès ! (Simulé)")
+
