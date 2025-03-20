@@ -6,6 +6,8 @@ st.set_page_config(page_title="Kelvin UTHAYAKUMAR", page_icon="💻", layout="ce
 
 # Liens pour les fichiers
 PROFILE_IMG = "https://raw.githubusercontent.com/kelvinuthaya/KELVINUTK/4561e0f75ea1b2fce8894a1f6969dc30d5866fe7/profile.jpg"
+LINKEDIN_URL = "https://www.linkedin.com/in/tonprofil"
+GITHUB_URL = "https://github.com/tonprofil"
 
 # 🔹 Liens distincts pour le CV
 CV_VIEWER_URL = "https://drive.google.com/file/d/11YKFjRfxwF55Ka_WOeKTyMZ_txJoG6bx/preview"
@@ -29,6 +31,37 @@ st.markdown("""
             box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
             width: 50px;
             height: 50px;
+        }
+
+        /* Icônes LinkedIn et GitHub sous la photo de profil */
+        .social-icons {
+            position: fixed;
+            top: 110px;
+            right: 50px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .social-icons a {
+            font-size: 24px;
+            color: #007BFF;
+            text-decoration: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            border-radius: 50%;
+            background-color: white;
+            border: 2px solid #007BFF;
+            width: 40px;
+            height: 40px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .social-icons a:hover {
+            background-color: #007BFF;
+            color: white;
         }
 
         /* Boutons Streamlit : personnalisation du bouton "Télécharger mon CV" */
@@ -87,6 +120,18 @@ st.markdown("<h3 class='section-text'>🚀 Explorez mon portfolio en faisant dé
 
 # Affichage de la photo de profil dans le coin supérieur droit
 st.markdown(f'<img src="{PROFILE_IMG}" class="profile-img" />', unsafe_allow_html=True)
+
+# 🔹 Icônes LinkedIn et GitHub sous la photo de profil
+st.markdown(f"""
+    <div class="social-icons">
+        <a href="{LINKEDIN_URL}" target="_blank" title="Mon LinkedIn">
+            <i class="fa fa-linkedin"></i>
+        </a>
+        <a href="{GITHUB_URL}" target="_blank" title="Mon GitHub">
+            <i class="fa fa-github"></i>
+        </a>
+    </div>
+""", unsafe_allow_html=True)
 
 # 🔹 Navigation rapide
 st.markdown("""
