@@ -5,7 +5,7 @@ import os
 from io import BytesIO
 
 # Configuration de la page
-st.set_page_config(page_title="Mon Portfolio", page_icon="💻", layout="wide")
+st.set_page_config(page_title="Kelvin UTHAYAKUMAR", page_icon="💻", layout="centered")
 
 # Liens pour les fichiers
 PROFILE_IMG = "https://raw.githubusercontent.com/kelvinuthaya/KELVINUTK/4561e0f75ea1b2fce8894a1f6969dc30d5866fe7/profile.jpg"
