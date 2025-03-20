@@ -93,7 +93,10 @@ st.markdown("""
     <div class='container'>
         <a href="#section2">📄 Voir mon CV</a><br>
         <a href="#section3">💻 Voir mes projets</a><br>
-        <a href="#section4">📬 Me contacter</a>
+        <a href="#section4">📬 Me contacter</a><br>
+        <a href="#section5">🛠️ Compétences et Technologies</a><br>
+        <a href="#section6">📚 Formation</a><br>
+        <a href="#section7">💼 Soft Skills</a>
     </div>
 """, unsafe_allow_html=True)
 
@@ -123,6 +126,37 @@ Mon projet **AADMSI** est une application interactive développée avec **Stream
 st.markdown("""
     <iframe src="https://aadmsi.streamlit.app" width="100%" height="800" frameborder="0" allowfullscreen></iframe>
 """, unsafe_allow_html=True)
+
+# 🛠️ **Compétences et Technologies**
+st.markdown("<a name='section5'></a>", unsafe_allow_html=True)
+st.title("🛠️ Compétences et Technologies")
+st.write("""
+Voici un aperçu des compétences techniques que j'ai développées au cours de ma formation et de mes projets :
+- **Langages de programmation** : Python, Java, JavaScript, SQL
+- **Frameworks et outils** : Django, Flask, Streamlit, React, Node.js
+- **Bases de données** : MySQL, MongoDB
+- **Outils de développement** : Git, Docker, CI/CD, VS Code
+- **Analyse de données** : Pandas, NumPy, Matplotlib, Seaborn
+- **Cloud** : AWS, Heroku
+""")
+
+# 📚 **Formation**
+st.markdown("<a name='section6'></a>", unsafe_allow_html=True)
+st.title("📚 Formation")
+st.write("""
+- **2023 - Présent** : Bachelor en Informatique (BUT) - Université [Nom de l'Université]
+- **2020 - 2023** : Bac S, spécialité Mathématiques - Lycée [Nom du Lycée]
+""")
+
+# 💼 **Soft Skills**
+st.markdown("<a name='section7'></a>", unsafe_allow_html=True)
+st.title("💼 Soft Skills")
+st.write("""
+- **Travail en équipe** : Expérience dans des projets collaboratifs, bonne communication et écoute.
+- **Résolution de problèmes** : Aptitude à trouver des solutions créatives pour surmonter des défis techniques.
+- **Gestion du temps** : Capacité à gérer plusieurs projets en parallèle tout en respectant les délais.
+- **Adaptabilité** : Flexibilité dans l'adoption de nouvelles technologies et méthodes de travail.
+""")
 
 # 📬 **Me Contacter**
 st.markdown("<a name='section4'></a>", unsafe_allow_html=True)
