@@ -24,11 +24,39 @@ st.markdown("""
         h1, h2, h3 { color: #4CAF50; }
         a { color: #007BFF; font-weight: bold; text-decoration: none; }
         a:hover { color: #0056b3; }
-        .stButton>button { background-color: #6200ea; color: white; border-radius: 12px; padding: 12px 24px; font-size: 16px; border: none; }
-        .stButton>button:hover { background-color: #3700b3; }
-        img { border-radius: 50%; border: 5px solid #4CAF50; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); }
-        .section-text { font-size: 18px; line-height: 1.8; margin-top: 20px; }
-        .container { text-align: center; }
+        
+        /* Boutons Streamlit */
+        .stButton > button {
+            background-color: #6200ea;
+            color: white;
+            border-radius: 12px;
+            padding: 12px 24px;
+            font-size: 16px;
+            border: none;
+        }
+        
+        .stButton > button:hover {
+            background-color: #3700b3;
+        }
+        
+        /* Ciblage de la zone d'images */
+        img {
+            border-radius: 50%;
+            border: 5px solid #4CAF50;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Section de texte */
+        .section-text {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-top: 20px;
+        }
+
+        /* Container central */
+        .container {
+            text-align: center;
+        }
     </style>
 """, unsafe_allow_html=True)
 
