@@ -122,7 +122,7 @@ Mon projet **AADMSI** est une application interactive développée avec **Stream
 Voici le lien vers mon projet AADMSI intégré dans cette page :
 """)
 st.markdown("""
-    <iframe src="https://aadmsi.streamlit.app" width="100%" height="600" frameborder="0" allowfullscreen></iframe>
+    <iframe src="https://share.streamlit.io/streamlit/demo/hello" width="100%" height="600" frameborder="0" allowfullscreen></iframe>
 """, unsafe_allow_html=True)
 
 st.markdown("[🔗 Voir le projet AADMSI en direct](https://aadmsi.streamlit.app)", unsafe_allow_html=True)
