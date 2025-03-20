@@ -121,11 +121,12 @@ st.subheader("🌐 Projet AADMSI - Analyse et Visualisation de Données")
 st.write("""
 Mon projet **AADMSI** est une application interactive développée avec **Streamlit**. Elle permet de gérer et visualiser des données d'entreprise via une interface simple et intuitive. Vous pouvez télécharger des fichiers de données et les analyser graphiquement.
 """)
+st.write("🔗 Pour accéder au projet, cliquez sur ce lien :")
+st.markdown("[Voir le projet AADMSI ici](https://aadmsi.streamlit.app)", unsafe_allow_html=True)
 
-# Affichage du projet AADMSI en iframe
-st.markdown("""
-    <iframe src="https://aadmsi.streamlit.app" width="100%" height="800" frameborder="0" allowfullscreen></iframe>
-""", unsafe_allow_html=True)
+# 📸 **Capture d'écran du projet**
+st.write("Voici une capture d'écran de l'application :")
+st.image("https://via.placeholder.com/800x400?text=Capture+d'%C3%A9cran+du+projet+AADMSI", caption="Capture d'écran du projet AADMSI", use_column_width=True)
 
 # 🛠️ **Compétences et Technologies**
 st.markdown("<a name='section5'></a>", unsafe_allow_html=True)
