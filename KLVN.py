@@ -8,7 +8,7 @@ st.set_page_config(page_title="Kelvin UTHAYAKUMAR", page_icon="💻", layout="ce
 PROFILE_IMG = "https://raw.githubusercontent.com/kelvinuthaya/KELVINUTK/4561e0f75ea1b2fce8894a1f6969dc30d5866fe7/profile.jpg"
 LINKEDIN_URL = "https://www.linkedin.com/in/tonprofil"
 GITHUB_URL = "https://github.com/tonprofil"
-LINKEDIN_ICON = "https://upload.wikimedia.org/wikipedia/commons/0/01/LinkedIn_Logo_2023.png"  # URL pour l'icône LinkedIn
+LINKEDIN_ICON = "https://upload.wikimedia.org/wikipedia/commons/0/01/LinkedIn_Log_2023.png"  # URL pour l'icône LinkedIn
 GITHUB_ICON = "https://upload.wikimedia.org/wikipedia/commons/a/a9/GitHub_Logo_2023.png"  # URL pour l'icône GitHub
 
 
