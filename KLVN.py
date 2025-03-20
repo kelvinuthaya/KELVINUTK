@@ -6,8 +6,8 @@ st.set_page_config(page_title="Kelvin UTHAYAKUMAR", page_icon="💻", layout="ce
 
 # Liens pour les fichiers
 PROFILE_IMG = "https://raw.githubusercontent.com/kelvinuthaya/KELVINUTK/4561e0f75ea1b2fce8894a1f6969dc30d5866fe7/profile.jpg"
-LINKEDIN_URL = "https://www.linkedin.com/in/tonprofil"
-GITHUB_URL = "https://github.com/tonprofil"
+LINKEDIN_URL = "https://www.linkedin.com/in/kelvinuthaya"
+GITHUB_URL = "https://github.com/kelvinuthaya"
 LINKEDIN_ICON = "https://upload.wikimedia.org/wikipedia/commons/0/01/LinkedIn_Logo_2023.png"  # URL pour l'icône LinkedIn
 GITHUB_ICON = "https://upload.wikimedia.org/wikipedia/commons/a/a9/GitHub_Logo_2023.png"  # URL pour l'icône GitHub
 
@@ -165,16 +165,16 @@ st.markdown("<a name='section3'></a>", unsafe_allow_html=True)
 st.title("📂 Mes Projets")
 
 # Description et lien vers le projet AADMSI
-st.subheader("🌐 Projet AADMSI - Analyse et Visualisation de Données")
+st.subheader("🌐 Projet MSI - Analyse et Visualisation de Données")
 st.write("""
-Mon projet **AADMSI** est une application interactive développée avec **Streamlit**. Elle permet de gérer et visualiser des données d'entreprise via une interface simple et intuitive. Vous pouvez télécharger des fichiers de données et les analyser graphiquement.
+Mon projet **AAD - MSI** est une application interactive développée avec **Streamlit**. Elle permet de gérer et visualiser des données sur des brevets concernant la 6G via une interface simple et intuitive. Vous pouvez télécharger des fichiers de données et les analyser graphiquement.
 """)
 st.write("🔗 Pour accéder au projet, cliquez sur ce lien :")
 st.markdown("[Voir le projet AADMSI ici](https://aadmsi.streamlit.app)", unsafe_allow_html=True)
 
 # 📸 **Capture d'écran du projet**
 st.write("Voici une capture d'écran de l'application :")
-st.image("https://github.com/kelvinuthaya/KELVINUTK/blob/main/Capture%20d%E2%80%99e%CC%81cran%202025-03-20%20a%CC%80%2011.32.41.png?raw=true", caption="Capture d'écran du projet AADMSI", use_column_width=True)
+st.image("https://github.com/kelvinuthaya/KELVINUTK/blob/main/Capture%20d%E2%80%99e%CC%81cran%202025-03-20%20a%CC%80%2011.32.41.png?raw=true", caption="Capture d'écran du projet AADMSI", use_container_width=True)
 
 # 🛠️ **Compétences et Technologies**
 st.markdown("<a name='section5'></a>", unsafe_allow_html=True)
