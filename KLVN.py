@@ -8,6 +8,8 @@ st.set_page_config(page_title="Kelvin UTHAYAKUMAR", page_icon="💻", layout="ce
 PROFILE_IMG = "https://raw.githubusercontent.com/kelvinuthaya/KELVINUTK/4561e0f75ea1b2fce8894a1f6969dc30d5866fe7/profile.jpg"
 LINKEDIN_URL = "https://www.linkedin.com/in/tonprofil"
 GITHUB_URL = "https://github.com/tonprofil"
+LINKEDIN_ICON = "https://upload.wikimedia.org/wikipedia/commons/0/01/LinkedIn_Logo_2023.png"  # URL pour l'icône LinkedIn
+GITHUB_ICON = "https://upload.wikimedia.org/wikipedia/commons/a/a9/GitHub_Logo_2023.png"  # URL pour l'icône GitHub
 
 # 🔹 Liens distincts pour le CV
 CV_VIEWER_URL = "https://drive.google.com/file/d/11YKFjRfxwF55Ka_WOeKTyMZ_txJoG6bx/preview"
@@ -121,14 +123,14 @@ st.markdown("<h3 class='section-text'>🚀 Explorez mon portfolio en faisant dé
 # Affichage de la photo de profil dans le coin supérieur droit
 st.markdown(f'<img src="{PROFILE_IMG}" class="profile-img" />', unsafe_allow_html=True)
 
-# 🔹 Icônes LinkedIn et GitHub sous la photo de profil
+# 🔹 Icônes LinkedIn et GitHub sous la photo de profil avec des images
 st.markdown(f"""
     <div class="social-icons">
         <a href="{LINKEDIN_URL}" target="_blank" title="Mon LinkedIn">
-            <i class="fa fa-linkedin"></i>
+            <img src="{LINKEDIN_ICON}" alt="LinkedIn" width="30" height="30"/>
         </a>
         <a href="{GITHUB_URL}" target="_blank" title="Mon GitHub">
-            <i class="fa fa-github"></i>
+            <img src="{GITHUB_ICON}" alt="GitHub" width="30" height="30"/>
         </a>
     </div>
 """, unsafe_allow_html=True)
