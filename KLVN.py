@@ -158,30 +158,39 @@ st.subheader("📨 Envoyer un message")
 nom = st.text_input("Votre nom")
 message = st.text_area("Votre message")
 
-if st.button("Envoyer"):
-    if nom and message:
-        # Vérifier si le fichier existe, sinon créer une structure vide
+# Demande de mot de passe avant d'afficher les messages
+password = st.text_input("Entrez le mot de passe pour voir les messages reçus", type="password")
+
+# Mot de passe correct
+correct_password = "kelvin2893"
+
+if password == correct_password:
+    if st.button("Envoyer"):
+        if nom and message:
+            # Vérifier si le fichier existe, sinon créer une structure vide
+            if os.path.exists(FICHIER_MESSAGES):
+                df = pd.read_csv(FICHIER_MESSAGES)
+            else:
+                df = pd.DataFrame(columns=["Nom", "Message"])
+
+            # Ajouter le message au fichier CSV
+            nouveau_message = pd.DataFrame([[nom, message]], columns=["Nom", "Message"])
+            df = pd.concat([df, nouveau_message], ignore_index=True)
+            df.to_csv(FICHIER_MESSAGES, index=False)
+
+            st.success("✅ Message envoyé et enregistré avec succès !")
+        else:
+            st.warning("⚠️ Veuillez remplir tous les champs.")
+
+    # 🔹 Voir les messages reçus (Admin uniquement)
+    if st.checkbox("📩 Voir les messages reçus (Admin)"):
         if os.path.exists(FICHIER_MESSAGES):
             df = pd.read_csv(FICHIER_MESSAGES)
-        else:
-            df = pd.DataFrame(columns=["Nom", "Message"])
-        
-        # Ajouter le message au fichier CSV
-        nouveau_message = pd.DataFrame([[nom, message]], columns=["Nom", "Message"])
-        df = pd.concat([df, nouveau_message], ignore_index=True)
-        df.to_csv(FICHIER_MESSAGES, index=False)
-
-        st.success("✅ Message envoyé et enregistré avec succès !")
-    else:
-        st.warning("⚠️ Veuillez remplir tous les champs.")
-
-# 🔹 Voir les messages reçus (Admin uniquement)
-if st.checkbox("📩 Voir les messages reçus (Admin)"):
-    if os.path.exists(FICHIER_MESSAGES):
-        df = pd.read_csv(FICHIER_MESSAGES)
-        if not df.empty:
-            st.write(df)
+            if not df.empty:
+                st.write(df)
+            else:
+                st.info("Aucun message reçu pour le moment.")
         else:
             st.info("Aucun message reçu pour le moment.")
-    else:
-        st.info("Aucun message reçu pour le moment.")
+else:
+    st.warning("⚠️ Mot de passe incorrect. L'accès est limité.")
