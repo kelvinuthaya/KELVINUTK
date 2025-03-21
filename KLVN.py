@@ -41,9 +41,11 @@ st.markdown("""
             position: fixed;
             top: 110px;
             right: 50px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
+            border-radius: 50%;
+            border: 3px solid #4CAF50;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            width: 50px;
+            height: 50px;
         }
 
         .social-icons a {
