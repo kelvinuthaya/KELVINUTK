@@ -11,20 +11,13 @@ GITHUB_URL = "https://github.com/kelvinuthaya"
 LINKEDIN_ICON = "https://raw.githubusercontent.com/kelvinuthaya/KELVINUTK/refs/heads/main/linkedin-logo-linkedin-icon-transparent-free-png.png"  # URL pour l'icône LinkedIn
 GITHUB_ICON = "https://raw.githubusercontent.com/kelvinuthaya/KELVINUTK/refs/heads/main/25231.png"  # URL pour l'icône GitHub
 
-
 # 🔹 Liens distincts pour le CV
 CV_VIEWER_URL = "https://drive.google.com/file/d/11YKFjRfxwF55Ka_WOeKTyMZ_txJoG6bx/preview"
 CV_DOWNLOAD_URL = "https://drive.google.com/uc?export=download&id=11YKFjRfxwF55Ka_WOeKTyMZ_txJoG6bx"
 
-# ✅ Ajout de styles CSS
+# ✅ Ajout de styles CSS avec correction de l'écrasement des icônes
 st.markdown("""
     <style>
-        body { font-family: 'Helvetica', sans-serif; background-color: #f4f4f9; color: #333; margin: 0; padding: 0; }
-        h1, h2, h3 { color: #4CAF50; }
-        a { color: #007BFF; font-weight: bold; text-decoration: none; }
-        a:hover { color: #0056b3; }
-
-        /* Photo de profil : petite et dans le coin supérieur droit */
         .profile-img {
             position: fixed;
             top: 50px;
@@ -32,14 +25,13 @@ st.markdown("""
             border-radius: 50%;
             border: 3px solid #4CAF50;
             box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-            width: 50px;
-            height: 50px;
+            width: 80px;
+            height: 80px;
         }
 
-        /* Icônes LinkedIn et GitHub sous la photo de profil */
         .social-icons {
             position: fixed;
-            top: 110px;
+            top: 150px;
             right: 50px;
             display: flex;
             flex-direction: column;
@@ -47,68 +39,25 @@ st.markdown("""
         }
 
         .social-icons a {
-            font-size: 24px;
-            color: #007BFF;
-            text-decoration: none;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 10px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
             background-color: white;
             border: 2px solid #007BFF;
-            width: 40px;
-            height: 40px;
             transition: background-color 0.3s, color 0.3s;
         }
 
         .social-icons a:hover {
             background-color: #007BFF;
-            color: white;
         }
 
-        /* Boutons Streamlit : personnalisation du bouton "Télécharger mon CV" */
-        .stButton > button {
-            background-color: #6200ea;
-            color: white;
-            border-radius: 12px;
-            padding: 12px 24px;
-            font-size: 16px;
-            border: none;
-        }
-        
-        .stButton > button:hover {
-            background-color: #3700b3;
-        }
-
-        /* Section de texte : occuper toute la largeur disponible */
-        .section-text {
-            font-size: 18px;
-            line-height: 1.8;
-            margin-top: 20px;
-            text-align: justify;
-        }
-
-        /* Container central */
-        .container {
-            max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
-            padding: 0 20px;
-        }
-
-        /* Styles généraux pour le contenu textuel */
-        .content {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            justify-content: flex-start;
-            width: 100%;
-        }
-
-        .content > h1, .content > h2, .content > h3 {
-            text-align: left;
-            width: 100%;
+        .social-icons img {
+            width: 30px;
+            height: 30px;
+            object-fit: contain; /* Empêche l'écrasement */
         }
     </style>
 """, unsafe_allow_html=True)
@@ -121,66 +70,46 @@ Découvrez ici mon **CV**, mes **projets** et mes **coordonnées**.
 """)
 st.markdown("<h3 class='section-text'>🚀 Explorez mon portfolio en faisant défiler la page !</h3>", unsafe_allow_html=True)
 
-# Affichage de la photo de profil dans le coin supérieur droit
+# Affichage de la photo de profil
 st.markdown(f'<img src="{PROFILE_IMG}" class="profile-img" />', unsafe_allow_html=True)
 
 # 🔹 Icônes LinkedIn et GitHub sous la photo de profil avec des images
 st.markdown(f"""
     <div class="social-icons">
         <a href="{LINKEDIN_URL}" target="_blank" title="Mon LinkedIn">
-            <img src="{LINKEDIN_ICON}" alt="LinkedIn" width="30" height="30"/>
+            <img src="{LINKEDIN_ICON}" alt="LinkedIn"/>
         </a>
         <a href="{GITHUB_URL}" target="_blank" title="Mon GitHub">
-            <img src="{GITHUB_ICON}" alt="GitHub" width="30" height="30"/>
+            <img src="{GITHUB_ICON}" alt="GitHub"/>
         </a>
-    </div>
-""", unsafe_allow_html=True)
-
-# 🔹 Navigation rapide
-st.markdown("""
-    <div class='container'>
-        <a href="#section2">📄 Voir mon CV</a><br>
-        <a href="#section3">💻 Voir mes projets</a><br>
-        <a href="#section4">📬 Me contacter</a><br>
-        <a href="#section5">🛠️ Compétences et Technologies</a><br>
-        <a href="#section6">📚 Formation</a><br>
-        <a href="#section7">💼 Soft Skills</a>
     </div>
 """, unsafe_allow_html=True)
 
 # 📄 **Mon CV**
-st.markdown("<a name='section2'></a>", unsafe_allow_html=True)
 st.title("📄 Mon CV")
 st.write("Vous pouvez consulter mon CV ci-dessous ou le télécharger.")
 
 # 🔹 Affichage du CV en iframe
 st.markdown(f'<iframe src="{CV_VIEWER_URL}" width="700" height="800"></iframe>', unsafe_allow_html=True)
 
-# 📥 **Bouton de téléchargement du CV** (correctement stylisé)
+# 📥 **Bouton de téléchargement du CV**
 if st.button('📥 Télécharger mon CV'):
     st.markdown(f"[Télécharger le CV ici]({CV_DOWNLOAD_URL})", unsafe_allow_html=True)
 
 # 📂 **Projets**
-st.markdown("<a name='section3'></a>", unsafe_allow_html=True)
 st.title("📂 Mes Projets")
-
-# Description et lien vers le projet AADMSI
 st.subheader("🌐 Projet MSI - Analyse et Visualisation de Données")
 st.write("""
-Mon projet **AAD - MSI** est une application interactive développée avec **Streamlit**. Elle permet de gérer et visualiser des données sur des brevets concernant la 6G via une interface simple et intuitive. Vous pouvez télécharger des fichiers de données et les analyser graphiquement.
+Mon projet **AAD - MSI** est une application interactive développée avec **Streamlit**. Elle permet de gérer et visualiser des données sur des brevets concernant la 6G via une interface simple et intuitive.
 """)
-st.write("🔗 Pour accéder au projet, cliquez sur ce lien :")
 st.markdown("[Voir le projet AADMSI ici](https://aadmsi.streamlit.app)", unsafe_allow_html=True)
 
 # 📸 **Capture d'écran du projet**
-st.write("Voici une capture d'écran de l'application :")
 st.image("https://github.com/kelvinuthaya/KELVINUTK/blob/main/Capture%20d%E2%80%99e%CC%81cran%202025-03-20%20a%CC%80%2011.32.41.png?raw=true", caption="Capture d'écran du projet AADMSI", use_container_width=True)
 
 # 🛠️ **Compétences et Technologies**
-st.markdown("<a name='section5'></a>", unsafe_allow_html=True)
 st.title("🛠️ Compétences et Technologies")
 st.write("""
-Voici un aperçu des compétences techniques que j'ai développées au cours de ma formation et de mes projets :
 - **Langages de programmation** : Python, Java, JavaScript, SQL
 - **Frameworks et outils** : Django, Flask, Streamlit, React, Node.js
 - **Bases de données** : MySQL, MongoDB
@@ -190,7 +119,6 @@ Voici un aperçu des compétences techniques que j'ai développées au cours de 
 """)
 
 # 📚 **Formation**
-st.markdown("<a name='section6'></a>", unsafe_allow_html=True)
 st.title("📚 Formation")
 st.write("""
 - **2023 - Présent** : Bachelor en Informatique (BUT) - Université [Nom de l'Université]
@@ -198,7 +126,6 @@ st.write("""
 """)
 
 # 💼 **Soft Skills**
-st.markdown("<a name='section7'></a>", unsafe_allow_html=True)
 st.title("💼 Soft Skills")
 st.write("""
 - **Travail en équipe** : Expérience dans des projets collaboratifs, bonne communication et écoute.
@@ -208,9 +135,7 @@ st.write("""
 """)
 
 # 📬 **Me Contacter**
-st.markdown("<a name='section4'></a>", unsafe_allow_html=True)
 st.title("📬 Me Contacter")
-
 st.write("N'hésitez pas à me contacter pour toute opportunité de stage ou alternance.")
 
 col1, col2 = st.columns(2)
