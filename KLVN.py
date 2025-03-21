@@ -8,8 +8,8 @@ st.set_page_config(page_title="Kelvin UTHAYAKUMAR", page_icon="💻", layout="ce
 PROFILE_IMG = "https://raw.githubusercontent.com/kelvinuthaya/KELVINUTK/4561e0f75ea1b2fce8894a1f6969dc30d5866fe7/profile.jpg"
 LINKEDIN_URL = "https://www.linkedin.com/in/kelvinuthaya"
 GITHUB_URL = "https://github.com/kelvinuthaya"
-LINKEDIN_ICON = "https://upload.wikimedia.org/wikipedia/commons/0/01/LinkedIn_Logo_2023.png"  # URL pour l'icône LinkedIn
-GITHUB_ICON = "https://upload.wikimedia.org/wikipedia/commons/a/a9/GitHub_Logo_2023.png"  # URL pour l'icône GitHub
+LINKEDIN_ICON = "https://raw.githubusercontent.com/kelvinuthaya/KELVINUTK/refs/heads/main/linkedin-logo-linkedin-icon-transparent-free-png.png"  # URL pour l'icône LinkedIn
+GITHUB_ICON = "https://raw.githubusercontent.com/kelvinuthaya/KELVINUTK/refs/heads/main/25231.png"  # URL pour l'icône GitHub
 
 
 # 🔹 Liens distincts pour le CV
