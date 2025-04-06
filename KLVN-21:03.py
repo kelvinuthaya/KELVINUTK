@@ -55,16 +55,15 @@ st.markdown("""
 
     /* Texte normal */
     p, li {
-        font-family: 'Verdana', sans-serif;
+        font-family: 'Helvetica', sans-serif;
         font-size: 1em;
         line-height: 1.8;
         margin-bottom: 10px;
-        color: #555;
     }
 
     /* Liens */
     a {
-        font-family: 'Arial', sans-serif;
+        font-family: 'Verdana', sans-serif;
         color: #007BFF;
         font-weight: bold;
         text-decoration: none;
