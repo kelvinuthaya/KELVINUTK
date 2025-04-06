@@ -12,8 +12,9 @@ LINKEDIN_ICON = "https://raw.githubusercontent.com/kelvinuthaya/KELVINUTK/refs/h
 GITHUB_ICON = "https://raw.githubusercontent.com/kelvinuthaya/KELVINUTK/refs/heads/main/25231.png"  # URL pour l'icône GitHub
 
 # 🔹 Liens distincts pour le CV
-CV_VIEWER_URL = "https://drive.google.com/file/d/11YKFjRfxwF55Ka_WOeKTyMZ_txJoG6bx/preview"
-CV_DOWNLOAD_URL = "https://drive.google.com/uc?export=download&id=11YKFjRfxwF55Ka_WOeKTyMZ_txJoG6bx"
+CV_VIEWER_URL = "https://drive.google.com/file/d/1LxTADEJ9p328SygiEwQY33at4sL6ZR6g/preview"
+
+CV_DOWNLOAD_URL = "https://drive.google.com/uc?export=download&id=1LxTADEJ9p328SygiEwQY33at4sL6ZR6g"
 
 # ✅ Ajout de styles CSS avec correction de l'écrasement des icônes
 st.markdown("""
