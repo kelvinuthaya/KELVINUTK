@@ -110,19 +110,30 @@ st.image("https://github.com/kelvinuthaya/KELVINUTK/blob/main/Capture%20d%E2%80%
 # 🛠️ **Compétences et Technologies**
 st.title("🛠️ Compétences et Technologies")
 st.write("""
-- **Langages de programmation** : Python, Java, JavaScript, SQL
-- **Frameworks et outils** : Django, Flask, Streamlit, React, Node.js
-- **Bases de données** : MySQL, MongoDB
-- **Outils de développement** : Git, Docker, CI/CD, VS Code
-- **Analyse de données** : Pandas, NumPy, Matplotlib, Seaborn
-- **Cloud** : AWS, Heroku
+- **Langages de programmation** : Python, Java, JavaScript, SQL, PHP, C,R
+- **Frameworks et outils** : Streamlit, Dash, PowerBI
+- **Bases de données** : MySQL
+- **Outils de développement** : Git, VS Code
+- **Analyse de données** : Pandas, NumPy, Matplotlib
 """)
 
 # 📚 **Formation**
 st.title("📚 Formation")
 st.write("""
-- **2023 - Présent** : Bachelor en Informatique (BUT) - Université [Nom de l'Université]
-- **2020 - 2023** : Bac S, spécialité Mathématiques - Lycée [Nom du Lycée]
+- BUT Informatique – 2ᵉ année - IUT de Villetaneuse – Université Sorbonne Paris Nord (Passerelle)  
+2024 – 2025 (en cours)  
+
+- Licence Sciences Sanitaires et Sociales (option L.A.S)  
+Université Sorbonne Paris Nord  
+2021 – 2024  
+
+- Licence PASS – Option Économie-Gestion  
+Université Sorbonne Paris Nord  
+2020 – 2021  
+
+- Baccalauréat Scientifique (Mention AB)  
+Lycée Blanche de Castille, Villemomble  
+2020
 """)
 
 # 💼 **Soft Skills**
@@ -142,14 +153,11 @@ col1, col2 = st.columns(2)
 
 with col1:
     st.subheader("📧 Email")
-    st.write("[ton.email@example.com](mailto:ton.email@example.com)")
+    st.write("[kelvinutk@gmail.com](mailto:kelvinutk@gmail.com)")
 
     st.subheader("💼 LinkedIn")
-    st.write("[Mon Profil LinkedIn](https://www.linkedin.com/in/tonprofil)")
+    st.write("[Mon Profil LinkedIn](https://www.linkedin.com/in/kelvinuthaya)")
 
 with col2:
     st.subheader("🐍 GitHub")
-    st.write("[Mon GitHub](https://github.com/tonprofil)")
-
-    st.subheader("🌍 Portfolio Web")
-    st.write("[Mon Portfolio](https://tonportfolio.com)")
+    st.write("[Mon GitHub](https://github.com/kelvinuthaya)")
