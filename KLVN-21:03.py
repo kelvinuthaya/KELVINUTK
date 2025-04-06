@@ -21,7 +21,7 @@ st.markdown("""
     <style>
         /* Définir les polices de base */
     body {
-        font-family: 'Arial', sans-serif; /* Police de base pour le texte général */
+        font-family: 'Helvetica', sans-serif; /* Police de base pour le texte général */
         background-color: #f4f4f9;
         color: #333;
         margin: 0;
