@@ -19,6 +19,87 @@ CV_DOWNLOAD_URL = "https://drive.google.com/uc?export=download&id=1LxTADEJ9p328S
 # ✅ Ajout de styles CSS avec correction de l'écrasement des icônes
 st.markdown("""
     <style>
+        /* Définir les polices de base */
+    body {
+        font-family: 'Arial', sans-serif; /* Police de base pour le texte général */
+        background-color: #f4f4f9;
+        color: #333;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Polices pour les titres */
+    h1 {
+        font-family: 'Roboto', sans-serif;
+        font-size: 2.5em; /* Taille plus grande pour le titre principal */
+        color: #4CAF50;
+        font-weight: bold;
+        margin-top: 20px;
+    }
+
+    h2 {
+        font-family: 'Lora', serif;
+        font-size: 2em;
+        color: #6200ea;
+        font-weight: normal;
+        margin-top: 20px;
+    }
+
+    h3 {
+        font-family: 'Merriweather', serif;
+        font-size: 1.5em;
+        color: #333;
+        font-weight: 600;
+        margin-top: 20px;
+    }
+
+    /* Texte normal */
+    p, li {
+        font-family: 'Verdana', sans-serif;
+        font-size: 1em;
+        line-height: 1.8;
+        margin-bottom: 10px;
+        color: #555;
+    }
+
+    /* Liens */
+    a {
+        font-family: 'Arial', sans-serif;
+        color: #007BFF;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: #0056b3;
+        text-decoration: underline;
+    }
+
+    /* Liens dans les boutons */
+    .stButton > button {
+        font-family: 'Roboto', sans-serif;
+    }
+
+    /* Ajouter un effet de transition pour les liens et boutons */
+    a, .stButton > button {
+        transition: all 0.3s ease;
+    }
+
+    /* Titres de sections */
+    .section-title {
+        font-family: 'Lora', serif;
+        font-size: 1.8em;
+        color: #4CAF50;
+        margin-bottom: 15px;
+    }
+
+    /* Texte pour les sous-titres */
+    .sub-title {
+        font-family: 'Merriweather', serif;
+        font-size: 1.2em;
+        color: #6200ea;
+        margin-top: 10px;
+    }
         .profile-img {
             position: fixed;
             top: 50px;
@@ -120,20 +201,20 @@ st.write("""
 # 📚 **Formation**
 st.title("📚 Formation")
 st.write("""
-- BUT Informatique – 2ᵉ année - IUT de Villetaneuse – Université Sorbonne Paris Nord (Passerelle)  
-2024 – 2025 (en cours)  
+- **BUT Informatique – 2ᵉ année** - IUT de Villetaneuse – Université Sorbonne Paris Nord (Passerelle)  
+**2024 – 2025** (en cours)  
 
-- Licence Sciences Sanitaires et Sociales (option L.A.S)  
+- **Licence Sciences Sanitaires et Sociales (option L.A.S)**  
 Université Sorbonne Paris Nord  
-2021 – 2024  
+**2021 – 2024**  
 
-- Licence PASS – Option Économie-Gestion  
+- **Licence PASS** – Option Économie-Gestion  
 Université Sorbonne Paris Nord  
-2020 – 2021  
+**2020 – 2021** 
 
 - Baccalauréat Scientifique (Mention AB)  
 Lycée Blanche de Castille, Villemomble  
-2020
+**2017 - 2020**
 """)
 
 # 💼 **Soft Skills**
