@@ -146,7 +146,7 @@ st.markdown("""
 # 🏠 **Accueil**
 st.title("Bienvenue sur mon Portfolio ! 👋")
 st.write("""
-Bonjour ! Je suis **Kelvin UTHAYAKUMAR**, étudiant en **BUT Informatique** et en recherche d'un **stage (8 à 10 semaines)**.  
+Bonjour ! Je suis **Kelvin UTHAYAKUMAR**, étudiant en **BUT Informatique** et en recherche d'un **stage de 10 semaines du 10 juin au 29 août 2025**.  
 Découvrez ici mon **CV**, mes **projets** et mes **coordonnées**.
 """)
 st.markdown("<h3 class='section-text'>🚀 Explorez mon portfolio en faisant défiler la page !</h3>", unsafe_allow_html=True)
